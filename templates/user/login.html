@@ -1,0 +1,18 @@
+{% extends "base/index.html" %}
+{% load crispy_forms_tags %}
+{% block main %}
+    <p class="bold">LOGIN</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="input-group flex-nowrap my-3">
+            <span class="input-group-text" id="addon-wrapping">Username</span>
+            <input type="text" class="form-control" name="username" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+        <div class="input-group flex-nowrap my-3">
+            <span class="input-group-text" id="addon-wrapping">Password</span>
+            <input type="password" class="form-control" name="password" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
+        </div>
+        <button class="btn w-100 btn-primary">submit</button>
+        <p>Forgot Password? <a href="{% url 'password_reset' %}">Reset Password</a></p>
+    </form>
+{% endblock %}
